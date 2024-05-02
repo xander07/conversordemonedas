@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab4a549-23c3-44c6-b68f-e2c340eb77f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/modelos/ConversionGson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/principal/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/principal/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/modelos/Conversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/modelos/Conversion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/modelos/Moneda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/modelos/Moneda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/peticiones/ConversorMonedas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/peticiones/ConversorMonedas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/principal/principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aluracursos/conversordemonedas/principal/principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -38,7 +41,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.principal.executor": "Run",
+    "Application.principal.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
@@ -71,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714587880025</updated>
-      <workItem from="1714587881142" duration="16190000" />
+      <workItem from="1714587881142" duration="19515000" />
     </task>
     <servers />
   </component>

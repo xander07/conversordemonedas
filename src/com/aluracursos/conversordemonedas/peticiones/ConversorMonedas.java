@@ -1,8 +1,6 @@
 package com.aluracursos.conversordemonedas.peticiones;
 
-import com.aluracursos.conversordemonedas.modelos.Conversion;
-import com.aluracursos.conversordemonedas.modelos.Moneda;
-import com.aluracursos.conversordemonedas.modelos.MonedasSoportadas;
+import com.aluracursos.conversordemonedas.modelos.ConversionGson;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -11,7 +9,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.List;
 
 public class ConversorMonedas {
     private String codigoOrigen;
@@ -43,9 +40,9 @@ public class ConversorMonedas {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         String json = response.body();
-        Conversion conversion1 = gson.fromJson(json, Conversion.class);
+        ConversionGson conversionGson1 = gson.fromJson(json, ConversionGson.class);
 
-        this.conversion = conversion1.conversion_result();
+        this.conversion = conversionGson1.conversion_result();
 
         return this.conversion;
     }

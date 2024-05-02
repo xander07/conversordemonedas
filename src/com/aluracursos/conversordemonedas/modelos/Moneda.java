@@ -1,9 +1,12 @@
 package com.aluracursos.conversordemonedas.modelos;
 
+import java.util.ArrayList;
+
 public class Moneda {
 
     private String codigo;
     private String nombre;
+    private ArrayList<Moneda> historialConversiones =  new ArrayList();
 
     public Moneda(String codigo, String nombre) {
         this.codigo = codigo;
@@ -24,6 +27,14 @@ public class Moneda {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void agregarHistorial(Moneda moneda) {
+        historialConversiones.add(moneda);
+    }
+
+    public ArrayList<Moneda> getHistorialConversiones() {
+        return historialConversiones;
     }
 
     @Override
