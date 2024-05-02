@@ -2,6 +2,7 @@ package com.aluracursos.conversordemonedas.principal;
 
 import com.aluracursos.conversordemonedas.peticiones.ConversorMonedas;
 import com.aluracursos.conversordemonedas.peticiones.ObtenerMonedas;
+import java.util.List;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -25,11 +26,10 @@ public class principal {
 
 
     public static void main(String[] args) {
+
         menu();
 
     }
-
-
 
     public static void menu(){
 
@@ -43,9 +43,41 @@ public class principal {
         while(true){
             System.out.println("*******************************************");
             System.out.println(menu.MENSAJE_BIENVENIDA);
-            System.out.println(menu.menuMonedas);
+            int startIndex = 0;
+            int endIndex = 10;
+            boolean mostrarMas = true;
+            List<String> opciones = menu.opciones;
+
+            while (mostrarMas){
+                System.out.println("*******************************************");
+                System.out.println("0) Salir \n");
+                for (int i = startIndex; i < endIndex && i < opciones.size() ; i++) {
+                    System.out.println((i+1) + ") " + opciones.get(i));
+                }
+
+                System.out.println("*******************************************");
+                System.out.println("¿Desea ver más opciones? \n" +
+                        "0) Atrás \n1) Si \n2) No \n");
+
+                int respuesta = scanner.nextInt();
+                if (respuesta == 0){
+                    endIndex = startIndex;
+                    startIndex -= 10;
+                    if (startIndex < 0){
+                        startIndex = 0;
+                        endIndex = 10;
+                    }
+                } else if (respuesta == 1){
+                    startIndex = endIndex;
+                    endIndex += 10;
+                } else if (respuesta == 2){
+                    mostrarMas = false;
+                }
+
+            }
 
             try {
+                System.out.println("Ingrese la moneda a convertir: \n");
                 opcionOrigen = scanner.nextInt();
                 if (opcionOrigen == 0){
                     System.out.println("¡Gracias por utilizar nuestros servicios!");
@@ -54,8 +86,40 @@ public class principal {
                 codOrigen = monedas.obtenerMonedas().get(opcionOrigen - 1).getCodigo();
 
                 System.out.println(menu.MENSAJE_MONEDA_DESTINO);
-                System.out.println(menu.menuMonedas);
 
+                startIndex = 0;
+                endIndex = 10;
+                mostrarMas = true;
+
+                while (mostrarMas){
+                    System.out.println("*******************************************");
+                    System.out.println("0) Salir \n");
+                    for (int i = startIndex; i < endIndex && i < opciones.size() ; i++) {
+                        System.out.println((i+1) + ") " + opciones.get(i));
+                    }
+
+                    System.out.println("*******************************************");
+                    System.out.println("¿Desea ver más opciones? \n" +
+                            "0) Atrás \n1) Si \n2) No \n");
+
+                    int respuesta = scanner.nextInt();
+                    if (respuesta == 0){
+                        endIndex = startIndex;
+                        startIndex -= 10;
+                        if (startIndex < 0){
+                            startIndex = 0;
+                            endIndex = 10;
+                        }
+                    } else if (respuesta == 1){
+                        startIndex = endIndex;
+                        endIndex += 10;
+                    } else if (respuesta == 2){
+                        mostrarMas = false;
+                    }
+
+                }
+
+                System.out.println("Ingrese la moneda destino: \n");
                 opcionDestino = scanner.nextInt();
                 if (opcionDestino == 0){
                     System.out.println("¡Gracias por utilizar nuestros servicios!");
